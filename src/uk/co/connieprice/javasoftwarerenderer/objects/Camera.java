@@ -11,7 +11,7 @@ import uk.co.connieprice.javasoftwarerenderer.math.Vector3;
  * @author Connie Price
  *
  */
-public class Camera extends Object {
+public class Camera extends Object3D {
 	Vector2 windowSize = new Vector2();
 	Vector2 viewSize = new Vector2();
 
@@ -35,16 +35,16 @@ public class Camera extends Object {
 	 * @return screenPosition The screen space coordinates that have been calculated.
 	 */
 	public Vector2 worldToScreen(Vector3 worldPosition) {
-		Vector3 bottomLeftCorner = new Vector3(
+		Vector3 topLeftCorner = new Vector3(
 			this.position.x - (this.viewSize.x/2),
-			this.position.y - (this.viewSize.y/2),
-			0
+			this.position.y + (this.viewSize.y/2),
+			this.position.z
 		);
 
-		Vector3 relativePosition = worldPosition.subtract(bottomLeftCorner);
+		Vector3 relativePosition = worldPosition.subtract(topLeftCorner);
 		Vector2 screenPosition = new Vector2(
 				(relativePosition.x / this.viewSize.x) * this.windowSize.x,
-				(relativePosition.y / this.viewSize.y) * this.windowSize.y
+				(relativePosition.y / -this.viewSize.y) * this.windowSize.y
 		);
 
 		return screenPosition;
