@@ -7,6 +7,8 @@ import java.awt.Graphics2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import uk.co.connieprice.javasoftwarerenderer.objects.Camera;
+
 /**
  * <h1>GraphicsHandler</h1>
  * The main graphics handler. Handles the graphical representation side of things.
@@ -32,7 +34,7 @@ public class GraphicsHandler implements Runnable {
 
 		this.panel = new Surface();
 		this.window.add(this.panel);
-		
+
 		this.window.pack();
 	}
 
@@ -59,15 +61,15 @@ public class GraphicsHandler implements Runnable {
 
 /**
  * <h1>Surface</h1>
- * A small custom JPanel that tells all the entities to
- * render as well as passing keyboard and mouse inputs
- * to our input handler.
- * 
+ * A small custom JPanel that stores the models and camera position.
+ *
  * @author Connie Price
  *
  */
 @SuppressWarnings("serial") // We're not going to be serialising instances of this class, this warning is annoying.
 class Surface extends JPanel {
+	Camera camera;
+
 	Surface() {
 		this.setFocusable(true);
 		this.setPreferredSize(new Dimension(640,480));
@@ -78,5 +80,7 @@ class Surface extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D graphics2D = (Graphics2D) g;
+
+		
 	}
 }
