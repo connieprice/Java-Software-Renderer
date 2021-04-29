@@ -9,6 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import uk.co.connieprice.javasoftwarerenderer.math.Euler;
 import uk.co.connieprice.javasoftwarerenderer.math.Vector3;
 
 class Vector3Test {
@@ -74,6 +75,29 @@ class Vector3Test {
 			Vector3 secondComboActual = currentVector.subtract(nextVector);
 			assertEquals(secondComboExpected, secondComboActual);
 		}
+	}
+
+	@Test
+	void testRotateAroundOrigin() {
+		Vector3 point;
+
+		point = new Vector3(1,0,0);
+		point = point.rotateAroundOrigin(new Euler(
+				Math.PI/2,
+				0,
+				0
+		));
+
+		assertEquals(point.z, -1);
+
+		point = new Vector3(0,1,0);
+		point = point.rotateAroundOrigin(new Euler(
+				0,
+				Math.PI/2,
+				0
+		));
+
+		assertEquals(point.x, -1);
 	}
 
 }

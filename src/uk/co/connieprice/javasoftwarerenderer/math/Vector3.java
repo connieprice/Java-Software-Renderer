@@ -82,4 +82,33 @@ public class Vector3 extends Vector2{
 			this.z - otherVector.z
 		);
 	}
+
+	public Vector3 rotateAroundOrigin(Euler rotation) {
+		double cosYaw = Math.cos(rotation.yaw);
+		double sinYaw = Math.sin(rotation.yaw);
+
+		double cosPitch = Math.cos(rotation.pitch);
+		double sinPitch = Math.sin(rotation.pitch);
+
+		double cosRoll = Math.cos(rotation.roll);
+		double sinRoll = Math.sin(rotation.roll);
+
+		double xX = cosYaw * cosPitch;
+		double xY = cosYaw * sinPitch * sinRoll - sinYaw * cosRoll;
+		double xZ = cosYaw * sinPitch * cosRoll + sinYaw * sinRoll;
+
+		double yX = sinYaw * cosPitch;
+		double yY = sinYaw * sinPitch * sinRoll + cosYaw * cosRoll;
+		double yZ = sinYaw * sinPitch * cosRoll - cosYaw * sinRoll;
+
+		double zX = -sinPitch;
+		double zY = cosPitch * sinRoll;
+		double zZ = cosPitch * cosRoll;
+
+		return new Vector3(
+				xX * this.x + xY * this.y + xZ * this.z,
+				yX * this.x + yY * this.y + yZ * this.z,
+				zX * this.x + zY * this.y + zZ * this.z
+		);
+	}
 }

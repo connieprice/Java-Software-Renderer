@@ -2,6 +2,7 @@ package uk.co.connieprice.javasoftwarerenderer.objects;
 
 import java.awt.Graphics2D;
 
+import uk.co.connieprice.javasoftwarerenderer.math.Euler;
 import uk.co.connieprice.javasoftwarerenderer.math.Vector3;
 
 /**
@@ -13,6 +14,7 @@ import uk.co.connieprice.javasoftwarerenderer.math.Vector3;
  */
 public class Object3D {
 	public Vector3 position = new Vector3();
+	public Euler rotation = new Euler();
 
 	/**
 	 * Render the object.

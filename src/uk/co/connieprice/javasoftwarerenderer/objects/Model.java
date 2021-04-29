@@ -4,6 +4,7 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.List;
 
+import uk.co.connieprice.javasoftwarerenderer.math.Euler;
 import uk.co.connieprice.javasoftwarerenderer.math.Vector2;
 import uk.co.connieprice.javasoftwarerenderer.math.Vector3;
 
@@ -71,8 +72,8 @@ public class Model extends Object3D {
 		for (int i = this.edges.size() - 1; i >= 0; i--) {
 			Edge edge = this.edges.get(i);
 
-			Vector3 point1 = edge.vert1.position.add(this.position);
-			Vector3 point2 = edge.vert2.position.add(this.position);
+			Vector3 point1 = edge.vert1.position.rotateAroundOrigin(this.rotation).add(this.position);
+			Vector3 point2 = edge.vert2.position.rotateAroundOrigin(this.rotation).add(this.position);
 
 			Vector2 screenPoint1 = camera.worldToScreen(point1);
 			Vector2 screenPoint2 = camera.worldToScreen(point2);
@@ -84,5 +85,17 @@ public class Model extends Object3D {
 				(int) Math.round(screenPoint2.y)
 			);
 		}
+	}
+
+	@Override
+	public void update(long time, long deltaTime) {
+		double seconds = time/1000d;
+		double angle = seconds * (Math.PI/5);
+
+		this.rotation = new Euler(
+			Math.PI/4,
+			0,
+			angle
+		);
 	}
 }

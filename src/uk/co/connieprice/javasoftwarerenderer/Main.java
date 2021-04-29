@@ -2,6 +2,7 @@ package uk.co.connieprice.javasoftwarerenderer;
 
 import uk.co.connieprice.javasoftwarerenderer.handlers.GraphicsHandler;
 import uk.co.connieprice.javasoftwarerenderer.handlers.ObjectHandler;
+import uk.co.connieprice.javasoftwarerenderer.math.Euler;
 import uk.co.connieprice.javasoftwarerenderer.objects.Camera;
 import uk.co.connieprice.javasoftwarerenderer.objects.Model;
 import uk.co.connieprice.javasoftwarerenderer.objects.Model.Edge;
