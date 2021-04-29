@@ -52,7 +52,7 @@ public class Vector2 {
         Vector2 v2 = (Vector2) o;
 
         // Compare the data members and return accordingly 
-        return Double.compare(this.x, v2.x) == 0 && Double.compare(this.y, v2.y) == 0;
+        return this.x == v2.x && this.y == v2.y;
     }
 
 	/**

@@ -52,7 +52,7 @@ public class Vector3 extends Vector2{
         Vector3 v3 = (Vector3) o;
 
         // Compare the data members and return accordingly 
-        return Double.compare(this.x, v3.x) == 0 && Double.compare(this.y, v3.y) == 0 && Double.compare(this.z, v3.z) == 0;
+        return this.x == v3.x && this.y == v3.y && this.z == v3.z;
     }
 
 	/**
