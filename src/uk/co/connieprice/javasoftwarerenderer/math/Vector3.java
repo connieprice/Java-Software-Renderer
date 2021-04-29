@@ -1,20 +1,40 @@
 package uk.co.connieprice.javasoftwarerenderer.math;
 
+/**
+ * <h1>Vector3</h1>
+ * A helper class to store 3d positions.
+ *
+ * @author Connie Price
+ *
+ */
 public class Vector3 extends Vector2{
-	public double z;
+	public final double z;
 
+	/**
+	 * Create a Vector3 object, with default 0,0,0 coordinates.
+	 */
 	public Vector3() {
-		this.x = 0;
-		this.y = 0;
+		super();
 		this.z = 0;
 	}
 
+	/**
+	 * Create a Vector3 object.
+	 * @param x X coordinate.
+	 * @param y Y coordinate.
+	 * @param z Z coordinate.
+	 */
 	public Vector3(double x, double y, double z) {
-		this.x = x;
-		this.y = y;
+		super(x, y);
 		this.z = z;
 	}
 
+	/**
+	 * Check if the vector is equal to another object.
+	 * If the object is another vector instance it compares coordinates.
+	 * @param o The comparison object.
+	 * @return equals Do the objects equal eachother?
+	 */
 	@Override
     public boolean equals(Object o) {
         // If the object is compared with itself then return true  
@@ -35,13 +55,31 @@ public class Vector3 extends Vector2{
         return Double.compare(this.x, v3.x) == 0 && Double.compare(this.y, v3.y) == 0 && Double.compare(this.z, v3.z) == 0;
     }
 
-	public static Vector3 add(Vector3 v1, Vector3 v2)
+	/**
+	 * Add another vector to this vector and produce a new vector from the result.
+	 * @param otherVector The other vector to add.
+	 * @return outputVector The output vector.
+	 */
+	public Vector3 add(Vector3 otherVector)
 	{
-		return new Vector3(v1.x + v2.x, v1.y + v2.y, v1.z + v2.z);
+		return new Vector3(
+			this.x + otherVector.x,
+			this.y + otherVector.y,
+			this.z + otherVector.z
+		);
 	}
 
-	public static Vector3 subtract(Vector3 v1, Vector3 v2)
+	/**
+	 * Subtract another vector from this vector and produce a new vector from the result.
+	 * @param otherVector The other vector to subtract.
+	 * @return outputVector The output vector.
+	 */
+	public Vector3 subtract(Vector3 otherVector)
 	{
-		return new Vector3(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z);
+		return new Vector3(
+			this.x - otherVector.x,
+			this.y - otherVector.y,
+			this.z - otherVector.z
+		);
 	}
 }

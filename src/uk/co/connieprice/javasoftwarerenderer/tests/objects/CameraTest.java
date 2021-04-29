@@ -1,4 +1,4 @@
-package uk.co.connieprice.javasoftwarerenderer.objects;
+package uk.co.connieprice.javasoftwarerenderer.tests.objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import uk.co.connieprice.javasoftwarerenderer.math.Vector2;
 import uk.co.connieprice.javasoftwarerenderer.math.Vector3;
+import uk.co.connieprice.javasoftwarerenderer.objects.Camera;
 
 class CameraTest {
 	private Camera camera;

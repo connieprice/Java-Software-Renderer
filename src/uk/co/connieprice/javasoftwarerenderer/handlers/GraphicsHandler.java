@@ -51,7 +51,10 @@ public class GraphicsHandler implements Runnable {
 			long deltaTime = endTime - startTime;
 
 			try {
-				Thread.sleep(framerateInterval - deltaTime);
+				long delay = framerateInterval - deltaTime;
+				if (delay > 0) { // If we are slower than the target frame rate than just don't delay, keep going.
+					Thread.sleep(framerateInterval - deltaTime);
+				}
 			} catch (InterruptedException e) {
 				System.out.print("Thread Interrupted");
 			}
