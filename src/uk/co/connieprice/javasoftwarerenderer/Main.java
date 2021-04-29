@@ -35,6 +35,9 @@ public class Main {
 		setupCube();
 	}
 
+	/**
+	 * A method that simply sets up a camera and cube and adds them to the object handler.
+	 */
 	public static void setupCube() {
 		Camera camera = new Camera(640, 480, 10, 7.5);
 		objectHandler.addObject(camera);

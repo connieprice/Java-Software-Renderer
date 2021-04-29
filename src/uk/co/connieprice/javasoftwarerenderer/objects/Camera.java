@@ -4,7 +4,7 @@ import uk.co.connieprice.javasoftwarerenderer.math.Vector2;
 import uk.co.connieprice.javasoftwarerenderer.math.Vector3;
 
 /**
- * <h1>Vector3</h1>
+ * <h1>Camera</h1>
  * A camera object which will store camera relative info
  * as well as helper methods for position translation.
  *

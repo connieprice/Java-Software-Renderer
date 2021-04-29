@@ -5,20 +5,40 @@ import java.util.List;
 
 import uk.co.connieprice.javasoftwarerenderer.objects.Object3D;
 
+/**
+ * <h1>ObjectHandler</h1>
+ * The main object handler. Handles the management of objects and any updates they might want to do.
+ * 
+ * @author Connie Price
+ *
+ */
 public class ObjectHandler implements Runnable {
 	private List<Object3D> objects = new ArrayList<Object3D>();
 
+	/**
+	 * Get all the objects currently being handled by the object handler.
+	 * @return List of objects.
+	 */
 	public List<Object3D> getObjects() {
 		return objects;
 	}
 
+	/**
+	 * Add an object to be handled by the object handler.
+	 * @param object The object to add.
+	 */
 	public void addObject(Object3D object) {
 		objects.add(object);
 	}
 
+	/**
+	 * Remove an object from the object handler.
+	 * @param object The object to remove.
+	 */
 	public void removeObject(Object3D object) {
 		objects.remove(object);
 	}
+
 
 	private long updateInterval = 8; // About 120 updates per second.
 	@Override

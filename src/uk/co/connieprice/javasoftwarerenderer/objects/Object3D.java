@@ -14,6 +14,17 @@ import uk.co.connieprice.javasoftwarerenderer.math.Vector3;
 public class Object3D {
 	public Vector3 position = new Vector3();
 
+	/**
+	 * Render the object.
+	 * @param camera The camera to render from.
+	 * @param graphics2D The graphics object to render to.
+	 */
 	public void render(Camera camera, Graphics2D graphics2D) {}
+
+	/**
+	 * Update the object.
+	 * @param time The current time. (Milliseconds)
+	 * @param deltaTime The time since the last update. (Milliseconds)
+	 */
 	public void update(long time, long deltaTime) {}
 }
