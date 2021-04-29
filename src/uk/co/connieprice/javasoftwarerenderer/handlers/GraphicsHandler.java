@@ -66,10 +66,18 @@ public class GraphicsHandler implements Runnable {
 		}
 	}
 
+	/**
+	 * Set the active camera.
+	 * @param camera The camera to use as the active camera.
+	 */
 	public void setActiveCamera(Camera camera) {
 		this.panel.activeCamera = camera;
 	}
 
+	/**
+	 * Get the active camera.
+	 * @return The active camera.
+	 */
 	public Camera getActiveCamera() {
 		return this.panel.activeCamera;
 	}

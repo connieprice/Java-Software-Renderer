@@ -83,6 +83,11 @@ public class Vector3 extends Vector2{
 		);
 	}
 
+	/**
+	 * Rotate the vector around 0,0,0 using the specified euler rotation.
+	 * @param rotation The rotation to rotate the vector by.
+	 * @return The rotated vector.
+	 */
 	public Vector3 rotateAroundOrigin(Euler rotation) {
 		double cosYaw = Math.cos(rotation.yaw);
 		double sinYaw = Math.sin(rotation.yaw);

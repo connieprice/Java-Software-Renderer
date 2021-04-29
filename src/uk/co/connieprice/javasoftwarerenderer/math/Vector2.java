@@ -1,7 +1,7 @@
 package uk.co.connieprice.javasoftwarerenderer.math;
 
 /**
- * <h1>Vector3</h1>
+ * <h1>Vector2</h1>
  * A helper class to store 2d positions.
  *
  * @author Connie Price

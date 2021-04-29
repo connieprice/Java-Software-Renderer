@@ -39,6 +39,13 @@ public class Model extends Object3D {
 		}
 	}
 
+	/**
+	 * <h1>Edge</h1>
+	 * An edge is just a way to store a "line" between two vertexes.
+	 * 
+	 * @author Connie Price
+	 * 
+	 */
 	static public class Edge {
 		public final Vertex vert1;
 		public final Vertex vert2;
@@ -87,6 +94,9 @@ public class Model extends Object3D {
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void update(long time, long deltaTime) {
 		double seconds = time/1000d;
