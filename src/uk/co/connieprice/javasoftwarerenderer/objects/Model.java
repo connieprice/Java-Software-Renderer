@@ -4,7 +4,6 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.List;
 
-import uk.co.connieprice.javasoftwarerenderer.math.Euler;
 import uk.co.connieprice.javasoftwarerenderer.math.Vector2;
 import uk.co.connieprice.javasoftwarerenderer.math.Vector3;
 
@@ -92,20 +91,5 @@ public class Model extends Object3D {
 				(int) Math.round(screenPoint2.y)
 			);
 		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void update(long time, long deltaTime) {
-		double seconds = time/1000d;
-		double angle = seconds * (Math.PI/5);
-
-		this.rotation = new Euler(
-			Math.PI/4,
-			0,
-			angle
-		);
 	}
 }
